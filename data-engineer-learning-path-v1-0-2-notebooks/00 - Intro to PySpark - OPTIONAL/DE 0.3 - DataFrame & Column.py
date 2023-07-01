@@ -222,7 +222,7 @@ display(revenue_df)
 
 # COMMAND ----------
 
-android_df = events_df.filter((col("traffic_source") != "direct") & (col("device") == "Android"))
+android_df = events_df.where((col("traffic_source") != "direct") & (col("device") == "Android"))
 display(android_df)
 
 # COMMAND ----------
@@ -234,7 +234,7 @@ display(android_df)
 
 # COMMAND ----------
 
-display(events_df.distinct())
+events_df.distinct().show()
 
 # COMMAND ----------
 
